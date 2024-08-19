@@ -5,7 +5,11 @@ module.exports = {
     "!./node_modules",  //pra excluir os diretórios do node_modules
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "init": "url('../assets/img/img_bg_inicio.png')"
+      },
+    },
   },
   plugins: [],
 }
