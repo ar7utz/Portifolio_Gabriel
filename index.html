@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="./assets/css/styleB.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/ico.ico">
     <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
-
+    <script src="https://unpkg.com/scrollreveal"></script>
 
     <title>Gabriel Malaquias - Arquiteto e Urbanista</title>
 
     <style>
         html {
             scroll-behavior: smooth;
+            display: 100vh;
+        }
+        body {
+            overflow-x: hidden;
+        }
+        section {
+            padding: 80px 0;
         }
     </style>
 </head>
@@ -22,32 +29,74 @@
     <header class="w-full">
         <!--Inicio da NavBar-->
         <div class="w-full h-full text-white">
-            <nav class="sm:flex w-full justify-center p-4 bg-zinc-900 gap-6">
-                <a href="#inicio" class="scroll-to">
-                    <button class="hidden sm:flex text-white text-center rounded-md py-2 px-4 sm:px-10 bg-zinc-900 border-white hover:bg-white hover:text-black hover:font-medium transition ease-in-out hover:animate-pulse">
-                        Inicio
+            <nav class="w-full justify-center p-4 bg-zinc-900 gap-6">
+                <!-- Mobile menu button -->
+                <button id="menu-toggle" class="md:hidden text-white text-center rounded-md py-2 px-4 bg-zinc-900 border-white hover:bg-white hover:text-black hover:font-medium transition ease-in-out">
+                    ☰
+                </button>
+
+                <!-- Mobile menu -->
+                <div id="menu" class="hidden md:hidden flex-col w-full justify-center gap-6 fixed inset-0 bg-zinc-900 z-50">
+                    <button id="menu-close" class="md:hidden text-white text-center rounded-md py-2 px-4 bg-zinc-900 border-white hover:bg-white hover:text-black hover:font-medium transition ease-in-out absolute top-4 left-4">
+                        ☰
                     </button>
-                </a>
-                <a href="#sobre" class="scroll-to">
-                    <button class="text-white text-center rounded-md py-2 px-4 sm:px-10 bg-zinc-900 border-white hover:bg-white hover:text-black hover:font-medium transition ease-in-out hover:animate-pulse">
-                        Sobre
-                    </button>
-                </a>
-                <a href="#servicos" class="scroll-to">
-                    <button class="text-white text-center rounded-md py-2 px-4 sm:px-10 bg-zinc-900 border-white hover:bg-white hover:text-black hover:font-medium transition ease-in-out hover:animate-pulse">
-                        Serviços
-                    </button>
-                </a>
-                <a href="#projetos" class="scroll-to">
-                    <button class="text-white text-center rounded-md py-2 px-4 sm:px-10 bg-zinc-900 border-white hover:bg-white hover:text-black hover:font-medium transition ease-in-out hover:animate-pulse">
-                        Projetos
-                    </button>
-                </a>
-                <a href="#contato" class="scroll-to">
-                    <button class="text-white text-center rounded-md py-2 px-4 sm:px-10 bg-zinc-900 border-white hover:bg-white hover:text-black hover:font-medium transition ease-in-out hover:animate-pulse">
-                        Contato               
-                    </button>
-                </a>
+                    <div class="flex flex-col items-center justify-center h-full space-y-8">
+                        <a href="#inicio" class="scroll-to">
+                            <button class="text-white text-center rounded-md py-2 px-4 bg-zinc-900 border-white hover:bg-white hover:text-black hover:font-medium transition ease-in-out hover:animate-pulse">
+                                Inicio
+                            </button>
+                        </a>
+                        <a href="#sobre" class="scroll-to">
+                            <button class="text-white text-center rounded-md py-2 px-4 bg-zinc-900 border-white hover:bg-white hover:text-black hover:font-medium transition ease-in-out hover:animate-pulse">
+                                Sobre
+                            </button>
+                        </a>
+                        <a href="#servicos" class="scroll-to">
+                            <button class="text-white text-center rounded-md py-2 px-4 bg-zinc-900 border-white hover:bg-white hover:text-black hover:font-medium transition ease-in-out hover:animate-pulse">
+                                Serviços
+                            </button>
+                        </a>
+                        <a href="#projetos" class="scroll-to">
+                            <button class="text-white text-center rounded-md py-2 px-4 bg-zinc-900 border-white hover:bg-white hover:text-black hover:font-medium transition ease-in-out hover:animate-pulse">
+                                Projetos
+                            </button>
+                        </a>
+                        <a href="#contato" class="scroll-to">
+                            <button class="text-white text-center rounded-md py-2 px-4 bg-zinc-900 border-white hover:bg-white hover:text-black hover:font-medium transition ease-in-out hover:animate-pulse">
+                                Contato
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Desktop menu -->
+                <div id="navbar" class="hidden md:flex flex-row justify-center items-center gap-6 top-0 left-0 right-0 w-screen bg-zinc-900 p-4 z-50">
+                    <a href="#inicio" class="scroll-to">
+                        <button class="text-white text-center rounded-md py-2 px-10 bg-zinc-900 border-white hover:bg-white hover:text-black hover:font-medium transition ease-in-out hover:animate-pulse">
+                            Inicio
+                        </button>
+                    </a>
+                    <a href="#sobre" class="scroll-to">
+                        <button class="text-white text-center rounded-md py-2 px-10 bg-zinc-900 border-white hover:bg-white hover:text-black hover:font-medium transition ease-in-out hover:animate-pulse">
+                            Sobre
+                        </button>
+                    </a>
+                    <a href="#servicos" class="scroll-to">
+                        <button class="text-white text-center rounded-md py-2 px-10 bg-zinc-900 border-white hover:bg-white hover:text-black hover:font-medium transition ease-in-out hover:animate-pulse">
+                            Serviços
+                        </button>
+                    </a>
+                    <a href="#projetos" class="scroll-to">
+                        <button class="text-white text-center rounded-md py-2 px-10 bg-zinc-900 border-white hover:bg-white hover:text-black hover:font-medium transition ease-in-out hover:animate-pulse">
+                            Projetos
+                        </button>
+                    </a>
+                    <a href="#contato" class="scroll-to">
+                        <button class="text-white text-center rounded-md py-2 px-10 bg-zinc-900 border-white hover:bg-white hover:text-black hover:font-medium transition ease-in-out hover:animate-pulse">
+                            Contato
+                        </button>
+                    </a>
+                </div>
             </nav>
         </div>
         <!--Final da NavBar-->
@@ -55,15 +104,15 @@
 
     <main class="text-white">
         <!--Página Inicio-->
-        <div id="inicio" class="w-full min-h-screen flex items-center justify-center bg-init lg:bg-cover bg-no-repeat bg-cover bg-fixed bg-center bg- sm:bg-cover">
-            <div class="p-4 text-center bg-zinc-800 bg-opacity-85 w-full">
+        <section id="inicio" class="w-full min-h-screen flex items-center justify-center bg-init lg:bg-cover bg-no-repeat bg-cover bg-fixed bg-center sm:bg-cover">
+            <div id="faixanome" class="p-4 text-center bg-zinc-800 bg-opacity-85 w-full">
                 <h1 class="text-4xl font-bold">Gabriel Malaquias</h1>
                 <p class="mt-4 text-xl">Arquiteto e urbanista, artista 3D focado em animação e renderização.</p>
             </div>
-        </div>
+        </section>
 
         <!--Página Sobre-->
-        <div id="sobre" class="my-10 w-full min-h-screen flex items-center justify-center px-6">
+        <section id="sobre" class="my-10 w-full min-h-screen flex items-center justify-center px-6">
             <div class="text-center">
                 <h1 class="text-4xl mb-4 font-bold">Sobre</h1>
                 <div class="flex flex-col sm:flex-row items-center">
@@ -76,17 +125,17 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!--Página Serviços-->
-        <div id="servicos" class="my-10 w-full min-h-screen items-center justify-center px-8">
+        <section id="servicos" class="my-10 w-full min-h-screen items-center justify-center px-8">
             <div class="text-center">
-                <h2 class="text-4xl mb-4 font-bold">Serviços</h2>
-                <h1 class="text-center items-center">Animação e Renderização 3D</h1>
+                <h1 class="text-4xl mb-4 font-bold">Serviços</h1>
+                <h2 class="text-center text-2xl items-center mb-5">Animação e Renderização 3D</h2>
                 <p>A animação e a renderização 3D desempenham um papel crucial em projetos de arquitetura, permitindo uma visualização realista e detalhada das ideias antes da sua execução. Esses processos não só facilitam a comunicação entre arquitetos, clientes e construtores, mas também ajudam na tomada de decisões ao proporcionar uma visão clara dos espaços, materiais e iluminação.</p>
                 <div class="flex flex-col sm:flex-row items-center">
                     <div class="sm:w-1/2 p-4 order-last sm:order-first">
-                        <h2>Animação</h2>
+                        <h1 class="text-2xl mb-4">Animação</h1>
                         <p>Animação 3D em arquitetura envolve a criação de vídeos que simulam uma caminhada ou um voo pelos espaços projetados. Isso oferece uma experiência imersiva, permitindo aos clientes explorarem o ambiente em diferentes ângulos e compreendendo como os elementos interagem entre si. Esta técnica é particularmente útil para grandes projetos, onde a compreensão do fluxo espacial é essencial.</p>
                     </div>
                     <div class="sm:w-1/2 p-4">
@@ -99,34 +148,54 @@
                         <p></p>
                     </div>
                     <div class="sm:w-1/2 p-4">
+                        <h1 class="text-2xl mb-4">Renderização</h1>
                         <p>Já a renderização 3D é o processo de gerar imagens estáticas de alta qualidade dos projetos. A renderização fotorrealista utiliza técnicas avançadas para simular a luz, sombras, texturas e materiais, criando imagens que muitas vezes são indistinguíveis de fotografias reais. Isso ajuda a visualizar a estética final do projeto, desde a fachada até os interiores, incluindo detalhes como a textura das paredes, o brilho dos pisos e a cor dos móveis.</p>
                     </div>
                 </div>
-                <p class="text-center items-center">area para falar das habilidades extras(lumion/softwares...)</p>
             </div>
-        </div>
+        </section>
 
         <!--Página Projetos-->
-        <div id="projetos" class="w-full min-h-screen px-6 md:px-16 lg:px-16">
+        <section id="projetos" class="w-full mb-60 h-screen px-6 md:px-16 lg:px-16">
             <div class="text-center">
                 <h1 class="text-4xl mb-4 font-bold">Projetos</h1>
 
                 <div id="controls-carousel" class="relative w-full" data-carousel="static">
-                    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                    <div class="relative h-[600px] overflow-hidden rounded-md">
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="./assets/img/w1.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                        </div>
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                            <img src="./assets/img/w2.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                        </div>
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="./assets/img/w3.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src="./assets/img/w1.jpeg" class="absolute block w-full h-full object-cover object-center" alt="Projeto Residencial Vista Lago">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                                <h3 class="text-xl">Projeto Residencial com Vista</h3>
+                                <p>Renderização interna de residência contemporânea com vista privilegiada</p>
+                            </div>
                         </div>
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="./assets/img/w4.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src="./assets/img/w2.jpeg" class="absolute block w-full h-full object-cover object-center" alt="Interior Minimalista">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                                <h3 class="text-xl">Interior Minimalista</h3>
+                                <p>Design de interiores com conceito minimalista e acabamentos sofisticados</p>
+                            </div>
                         </div>
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="./assets/img/w5.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src="./assets/img/w3.jpeg" class="absolute block w-full h-full object-cover object-center" alt="Área de Lazer">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                                <h3 class="text-xl">Área de Lazer</h3>
+                                <p>Espaço gourmet e área de convivência</p>
+                            </div>
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="./assets/img/w4.jpeg" class="absolute block w-full h-full object-cover object-center" alt="Fachada Moderna">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                                <h3 class="text-xl">Fachada Moderna</h3>
+                                <p>Projeto renderizado com linhas contemporâneas e materiais nobres</p>
+                            </div>
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="./assets/img/w5.jpeg" class="absolute block w-full h-full object-cover object-center" alt="Sala de Estar">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                                <h3 class="text-xl">Sala de Estar</h3>
+                                <p>Ambiente da cozinha integrado com iluminação natural</p>
+                            </div>
                         </div>
                     </div>
                     <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
@@ -146,24 +215,45 @@
                         </span>
                     </button>
                 </div>
+                <div id="video1" class="my-10 flex justify-center">
+                    <div class="rounded-lg shadow-lg mb-40">
+                        <video controls class="w-[580px] h-[350px] rounded-t-lg">
+                            <source src="./assets/video/video1_T5199ntl.mp4" type="video/mp4">
+                            Seu navegador não suporta a tag de vídeo.
+                        </video>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
         <!--Página sobre a Origyn-->
-        <div id="orygin" class="flex w-full min-h-screen items-center justify-center">
+        <section id="orygin" class="mt-80 flex w-full min-h-screen items-center justify-center">
             <div class="justify-center items-center">
-                <div class="justify-center items-cente">
-                    <img src="./assets/img/LogoORIGYN branca.png" class="items-center justify-center w-56 md:w-80 lg:w-96" alt="Logo da empresa Orygin 3D">
+                <div class="flex justify-center items-center">
+                    <img src="./assets/img/LogoORIGYN branca.png" class="w-56 md:w-80 lg:w-96" alt="Logo da empresa Orygin 3D">
                 </div>
-                <div>
-                    <p>texto explicativo sobre</p>
+                <div class="max-w-4xl mx-auto px-6 mt-8 text-center">
+                    <p class="text-lg leading-relaxed">
+                        <span class="block text-2xl font-bold mb-4">Origyn: Transformando Ideias em Realidade</span>
+                    </p>
+                    <p class="text-lg leading-relaxed mb-6">
+                        A Origyn é uma empresa inovadora especializada em arquitetura e renderização 3D, dedicada a transformar conceitos em experiências visuais impactantes. Combinando criatividade, tecnologia de ponta e atenção aos mínimos detalhes, a Origyn oferece soluções que vão além do desenho técnico, criando representações visuais que impressionam e inspiram.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-6">
+                        Nos dias de hoje, a renderização 3D e a arquitetura digital são essenciais para o mercado. Elas permitem que projetos ganhem vida antes mesmo de serem construídos, proporcionando clareza e confiança para clientes, investidores e equipes de execução. Seja para visualizar um espaço arquitetônico, planejar reformas ou apresentar propostas de alto impacto, a Origyn torna o processo mais eficiente e acessível, reduzindo erros e otimizando a tomada de decisões.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-6">
+                        Além disso, o foco em tecnologias 3D destaca a importância de criar experiências visuais realistas que encantam e ajudam os clientes a enxergar o potencial de cada projeto. Na era digital, a arquitetura vai além de linhas e plantas, ela envolve emoção, conexão e inovação – pilares fundamentais que a Origyn domina com excelência.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        <span class="font-bold">Origyn: onde sua visão ganha forma e sua ideia vira realidade.</span>
+                    </p>
                 </div>
             </div>
-
-        </div>
+        </section>
 
         <!--Página Contato-->
-        <div id="contato" class="mb-80 w-full min-h-screen flex items-center justify-center">
+        <section id="contato" class="my-10 mb-80 w-full min-h-screen flex items-center justify-center">
             <div class="text-center px-8">
                 <h1 class="text-4xl mb-4 font-bold">Contato</h1>
                 <div class="flex flex-col md:flex-row lg:flex-row gap-6">
@@ -182,14 +272,17 @@
                     </div>
                     
                     <div class="basis-1/3 ">
-                        <button class="p-2 w-52 border-white rounded-lg hover:bg-white hover:text-zinc-950 transition duration-700 ease-in-out">
-                            <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRwPxSQssBnVKjkLGVBBSwcVGwbNkqkcrNMbnzHnWtswLjzsHzpNVDGQfwFQGNhqdzNJCtTj" target="_blank">Email Profissional</a>
-                        </button>
+                        <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRwPxSQssBnVKjkLGVBBSwcVGwbNkqkcrNMbnzHnWtswLjzsHzpNVDGQfwFQGNhqdzNJCtTj" target="_blank">
+                            <button class="p-2 w-52 border-white rounded-lg hover:bg-white hover:text-zinc-950 transition duration-700 ease-in-out">
+                                Email Profissional
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
+    
     <footer class="w-full flex flex-col justify-center items-center bg-zinc-700 py-6">
         <div class="flex flex-row items-center justify-center space-x-8 mb-4">
             <div>
@@ -213,20 +306,18 @@
         </div>
     </footer>
     
-
-
     <button id="scrollToTopBtn" class="fixed bottom-4 border border-white right-4 p-4 bg-zinc-950 text-white rounded-full shadow-lg transition duration-500 ease-in-out opacity-25 hover:opacity-100 hover:bg-white hover:border-solid hover:border-2 hover:border-black hover:text-black">
         ↑
     </button>
 
-    <script>
+    <script> //ancora
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 target.scrollIntoView({
                     behavior: 'smooth',
-                    block: 'center'
+                    block: 'start'
                 });
             });
         });
@@ -274,6 +365,90 @@
                 });
             });
             setInterval(nextItem, 7000);
+        });
+    </script>
+
+
+    <script> //menu mobile
+        // Alterna a exibição do menu ao clicar no botão
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', function () {
+            menu.classList.toggle('hidden');
+        });
+
+        menuClose.addEventListener('click', function() {
+            menu.classList.add('hidden');
+        });
+
+        // Fecha o menu ao clicar em qualquer botão dentro dele
+        document.querySelectorAll('.scroll-to').forEach(anchor => {
+            anchor.addEventListener('click', function () {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Fecha o menu ao clicar fora dele
+        document.addEventListener('click', function (event) {
+            if (
+                !menu.contains(event.target) && // Verifica se o clique não foi dentro do menu
+                !menuToggle.contains(event.target) && // Verifica se o clique não foi no botão de toggle
+                !menu.classList.contains('hidden') // Só fecha se o menu estiver visível
+            ) {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+
+    <script> //scrollreveal
+        ScrollReveal().reveal('#navbar', { 
+            origin: 'left',
+            distance: '100px',
+            duration: 1000,
+            delay: 200
+        });
+        ScrollReveal().reveal('#faixanome', { 
+            origin: 'left',
+            distance: '100px',
+            duration: 1000,
+            delay: 200
+        });
+        
+        ScrollReveal().reveal('#sobre', {
+            origin: 'left',
+            distance: '100px', 
+            duration: 1000,
+            delay: 200
+        });
+
+        ScrollReveal().reveal('#servicos', {
+            origin: 'left',
+            distance: '100px',
+            duration: 1000,
+            delay: 200
+        });
+
+        ScrollReveal().reveal('#projetos', {
+            origin: 'left', 
+            distance: '100px',
+            duration: 1000,
+            delay: 200
+        });
+
+        ScrollReveal().reveal('#orygin', {
+            origin: 'left',
+            distance: '100px',
+            duration: 1000,
+            delay: 200
+        });
+
+        ScrollReveal().reveal('#contato', {
+            origin: 'left',
+            distance: '100px',
+            duration: 1000,
+            delay: 200
         });
     </script>
 
